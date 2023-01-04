@@ -1,0 +1,3 @@
+C:\Users\Dodek\source\repos\LSB steganography in C++ and x64 assembly\LSB steganography in C++ and x64 assembly\Debug\LSB steganography in C++ and x64 assembly.vcxproj.AssemblyReference.cache
+C:\Users\Dodek\source\repos\LSB steganography in C++ and x64 assembly\LSB steganography in C++ and x64 assembly\Debug\LSB_steganography_in_C___and_x64_assembly.Form1.resources
+C:\Users\Dodek\source\repos\LSB steganography in C++ and x64 assembly\LSB steganography in C++ and x64 assembly\Debug\LSB steganography in C++ and x64 assembly.vcxproj.GenerateResource.cache
