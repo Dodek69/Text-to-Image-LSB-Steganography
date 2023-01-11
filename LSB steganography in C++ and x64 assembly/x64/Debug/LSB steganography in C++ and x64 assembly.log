@@ -1,4 +1,0 @@
-﻿  CppCLR_WinformsProjekt.cpp
-C:\Users\Dodek\source\repos\LSB steganography in C++ and x64 assembly\LSB steganography in C++ and x64 assembly\Form1.h(51,22): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-  AssemblyInfo.obj : napotkano moduł MSIL; konsolidowanie przyrostowe jest wyłączone dla modułów MSIL; zostanie wykonana pełna konsolidacja
-  LSB steganography in C++ and x64 assembly.vcxproj -> C:\Users\Dodek\source\repos\LSB steganography in C++ and x64 assembly\x64\Debug\LSB steganography in C++ and x64 assembly.exe
