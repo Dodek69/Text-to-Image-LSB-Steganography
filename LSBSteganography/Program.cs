@@ -1,7 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿// topic: LSB Steganography
+// The encoding algorithm sets the least significant bits of the image bytes to the bit value of the input text
+// The decoding algorithm sets the bits of the output text to the value of the least significant bits of the image bytes
+// author: Dominik Ciołczyk, semester: 5, date: 29.01.23
+// ver 1.0
+
+using System;
 using System.Windows.Forms;
 
 namespace LSBSteganography

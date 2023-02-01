@@ -1,4 +1,6 @@
 ;-------------------------------------------------------------------------
 LIBRARY LSBSteganography.Assembler
-EXPORTS AdjustBrightnessASM
+EXPORTS
+Decode
+Encode
 ;-------------------------------------------------------------------------

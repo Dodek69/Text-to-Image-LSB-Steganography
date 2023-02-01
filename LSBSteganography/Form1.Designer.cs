@@ -32,7 +32,7 @@ namespace LSBSteganography
             this.components = new System.ComponentModel.Container();
             this.trackBarTasks = new System.Windows.Forms.TrackBar();
             this.labelTasks = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labelInput = new System.Windows.Forms.Label();
             this.buttonRun = new System.Windows.Forms.Button();
             this.labelCSharp = new System.Windows.Forms.Label();
             this.labelASM = new System.Windows.Forms.Label();
@@ -40,20 +40,27 @@ namespace LSBSteganography
             this.pictureBoxLeft = new System.Windows.Forms.PictureBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonOpen = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonSave = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonTools = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonDecode = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonTest = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonHelp = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonSendHelp = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonAuthor = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.textBoxInput = new System.Windows.Forms.TextBox();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.checkBoxFast = new System.Windows.Forms.CheckBox();
             this.textBoxOutput = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.labelOutput = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.labelCharacters = new System.Windows.Forms.Label();
-            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.buttonTest = new System.Windows.Forms.ToolStripMenuItem();
+            this.labelCSharpTime = new System.Windows.Forms.Label();
+            this.labelASMTime = new System.Windows.Forms.Label();
+            this.textBoxInput = new System.Windows.Forms.TextBox();
+            this.labelTasksNumber = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarTasks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLeft)).BeginInit();
@@ -68,92 +75,94 @@ namespace LSBSteganography
             // 
             this.trackBarTasks.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.trackBarTasks.Location = new System.Drawing.Point(240, 965);
+            this.trackBarTasks.Location = new System.Drawing.Point(240, 980);
             this.trackBarTasks.Maximum = 64;
             this.trackBarTasks.Minimum = 1;
             this.trackBarTasks.Name = "trackBarTasks";
-            this.trackBarTasks.Size = new System.Drawing.Size(1367, 56);
+            this.trackBarTasks.Size = new System.Drawing.Size(1174, 56);
             this.trackBarTasks.TabIndex = 0;
             this.trackBarTasks.TickFrequency = 4;
             this.trackBarTasks.Value = 1;
-            this.trackBarTasks.Scroll += new System.EventHandler(this.trackBarThreads_Scroll);
+            this.trackBarTasks.Scroll += new System.EventHandler(this.TrackBarTasks_Scroll);
             // 
             // labelTasks
             // 
             this.labelTasks.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelTasks.AutoSize = true;
             this.labelTasks.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelTasks.Location = new System.Drawing.Point(12, 969);
+            this.labelTasks.Location = new System.Drawing.Point(7, 980);
             this.labelTasks.Name = "labelTasks";
             this.labelTasks.Size = new System.Drawing.Size(193, 29);
             this.labelTasks.TabIndex = 1;
             this.labelTasks.Text = "Number of tasks:";
-            this.labelTasks.Click += new System.EventHandler(this.labelThreads_Click);
             // 
-            // label2
+            // labelInput
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(12, 727);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(124, 29);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Text input:";
+            this.labelInput.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelInput.AutoSize = true;
+            this.labelInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelInput.Location = new System.Drawing.Point(7, 740);
+            this.labelInput.Name = "labelInput";
+            this.labelInput.Size = new System.Drawing.Size(124, 29);
+            this.labelInput.TabIndex = 3;
+            this.labelInput.Text = "Text input:";
             // 
             // buttonRun
             // 
             this.buttonRun.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonRun.Enabled = false;
-            this.buttonRun.Location = new System.Drawing.Point(1613, 949);
+            this.buttonRun.Location = new System.Drawing.Point(1420, 956);
             this.buttonRun.Name = "buttonRun";
             this.buttonRun.Size = new System.Drawing.Size(110, 41);
             this.buttonRun.TabIndex = 4;
             this.buttonRun.Text = "Run";
             this.buttonRun.UseVisualStyleBackColor = true;
-            this.buttonRun.Click += new System.EventHandler(this.button1_Click);
+            this.buttonRun.Click += new System.EventHandler(this.ButtonRun_Click);
             // 
             // labelCSharp
             // 
             this.labelCSharp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labelCSharp.AutoSize = true;
             this.labelCSharp.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelCSharp.Location = new System.Drawing.Point(1738, 956);
+            this.labelCSharp.Location = new System.Drawing.Point(1536, 959);
             this.labelCSharp.Name = "labelCSharp";
-            this.labelCSharp.Size = new System.Drawing.Size(101, 29);
+            this.labelCSharp.Size = new System.Drawing.Size(171, 29);
             this.labelCSharp.TabIndex = 5;
-            this.labelCSharp.Text = "C# time:";
-            this.labelCSharp.Click += new System.EventHandler(this.label3_Click);
+            this.labelCSharp.Text = "C# time (ticks):";
             // 
             // labelASM
             // 
             this.labelASM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labelASM.AutoSize = true;
             this.labelASM.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelASM.Location = new System.Drawing.Point(1738, 995);
+            this.labelASM.Location = new System.Drawing.Point(1536, 995);
             this.labelASM.Name = "labelASM";
-            this.labelASM.Size = new System.Drawing.Size(122, 29);
+            this.labelASM.Size = new System.Drawing.Size(192, 29);
             this.labelASM.TabIndex = 6;
-            this.labelASM.Text = "ASM time:";
+            this.labelASM.Text = "ASM time (ticks):";
             // 
             // pictureBoxRight
             // 
-            this.pictureBoxRight.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBoxRight.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxRight.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxRight.Name = "pictureBoxRight";
-            this.pictureBoxRight.Size = new System.Drawing.Size(934, 680);
+            this.pictureBoxRight.Size = new System.Drawing.Size(934, 650);
             this.pictureBoxRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxRight.TabIndex = 7;
             this.pictureBoxRight.TabStop = false;
             // 
             // pictureBoxLeft
             // 
+            this.pictureBoxLeft.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxLeft.Cursor = System.Windows.Forms.Cursors.Default;
-            this.pictureBoxLeft.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBoxLeft.Enabled = false;
             this.pictureBoxLeft.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxLeft.Name = "pictureBoxLeft";
-            this.pictureBoxLeft.Size = new System.Drawing.Size(940, 680);
+            this.pictureBoxLeft.Size = new System.Drawing.Size(940, 650);
             this.pictureBoxLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxLeft.TabIndex = 8;
             this.pictureBoxLeft.TabStop = false;
@@ -172,38 +181,93 @@ namespace LSBSteganography
             // 
             this.menuStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.buttonTest});
+            this.buttonFile,
+            this.buttonTools,
+            this.buttonHelp});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
             this.menuStrip2.Size = new System.Drawing.Size(1902, 28);
             this.menuStrip2.TabIndex = 10;
             this.menuStrip2.Text = "menuStrip2";
             // 
-            // fileToolStripMenuItem
+            // buttonFile
             // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem2,
-            this.saveToolStripMenuItem,
-            this.exitToolStripMenuItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 26);
-            this.fileToolStripMenuItem.Text = "&File";
-            this.fileToolStripMenuItem.Click += new System.EventHandler(this.fileToolStripMenuItem_Click);
+            this.buttonFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.buttonOpen,
+            this.buttonSave,
+            this.buttonExit});
+            this.buttonFile.Name = "buttonFile";
+            this.buttonFile.Size = new System.Drawing.Size(46, 24);
+            this.buttonFile.Text = "&File";
             // 
-            // toolStripMenuItem2
+            // buttonOpen
             // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
-            this.toolStripMenuItem2.Text = "&Open";
-            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
+            this.buttonOpen.Name = "buttonOpen";
+            this.buttonOpen.Size = new System.Drawing.Size(128, 26);
+            this.buttonOpen.Text = "&Open";
+            this.buttonOpen.Click += new System.EventHandler(this.ButtonOpen_Click);
             // 
-            // exitToolStripMenuItem
+            // buttonSave
             // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.exitToolStripMenuItem.Text = "&Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            this.buttonSave.Enabled = false;
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(128, 26);
+            this.buttonSave.Text = "&Save";
+            this.buttonSave.Click += new System.EventHandler(this.ButtonSave_Click);
+            // 
+            // buttonExit
+            // 
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(128, 26);
+            this.buttonExit.Text = "&Exit";
+            this.buttonExit.Click += new System.EventHandler(this.ButtonExit_Click);
+            // 
+            // buttonTools
+            // 
+            this.buttonTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.buttonDecode,
+            this.buttonTest});
+            this.buttonTools.Enabled = false;
+            this.buttonTools.Name = "buttonTools";
+            this.buttonTools.Size = new System.Drawing.Size(58, 24);
+            this.buttonTools.Text = "Tools";
+            // 
+            // buttonDecode
+            // 
+            this.buttonDecode.Name = "buttonDecode";
+            this.buttonDecode.Size = new System.Drawing.Size(144, 26);
+            this.buttonDecode.Text = "&Decode";
+            this.buttonDecode.Click += new System.EventHandler(this.ButtonDecode_Click);
+            // 
+            // buttonTest
+            // 
+            this.buttonTest.Name = "buttonTest";
+            this.buttonTest.Size = new System.Drawing.Size(144, 26);
+            this.buttonTest.Text = "&Test";
+            this.buttonTest.Click += new System.EventHandler(this.ButtonTest_Click);
+            // 
+            // buttonHelp
+            // 
+            this.buttonHelp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.buttonSendHelp,
+            this.buttonAuthor});
+            this.buttonHelp.Name = "buttonHelp";
+            this.buttonHelp.Size = new System.Drawing.Size(55, 24);
+            this.buttonHelp.Text = "&Help";
+            // 
+            // buttonSendHelp
+            // 
+            this.buttonSendHelp.Name = "buttonSendHelp";
+            this.buttonSendHelp.Size = new System.Drawing.Size(224, 26);
+            this.buttonSendHelp.Text = "Send help";
+            this.buttonSendHelp.Click += new System.EventHandler(this.ButtonSendHelp_Click);
+            // 
+            // buttonAuthor
+            // 
+            this.buttonAuthor.Name = "buttonAuthor";
+            this.buttonAuthor.Size = new System.Drawing.Size(224, 26);
+            this.buttonAuthor.Text = "&Author";
+            this.buttonAuthor.Click += new System.EventHandler(this.ButtonAuthor_Click);
             // 
             // splitContainer1
             // 
@@ -219,20 +283,9 @@ namespace LSBSteganography
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.pictureBoxRight);
-            this.splitContainer1.Size = new System.Drawing.Size(1878, 680);
+            this.splitContainer1.Size = new System.Drawing.Size(1878, 650);
             this.splitContainer1.SplitterDistance = 940;
             this.splitContainer1.TabIndex = 11;
-            // 
-            // textBoxInput
-            // 
-            this.textBoxInput.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBoxInput.Location = new System.Drawing.Point(139, 727);
-            this.textBoxInput.MaxLength = 0;
-            this.textBoxInput.Multiline = true;
-            this.textBoxInput.Name = "textBoxInput";
-            this.textBoxInput.Size = new System.Drawing.Size(813, 216);
-            this.textBoxInput.TabIndex = 12;
-            this.textBoxInput.TextChanged += new System.EventHandler(this.textBoxInput_TextChanged);
             // 
             // openFileDialog
             // 
@@ -243,34 +296,34 @@ namespace LSBSteganography
             this.checkBoxFast.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBoxFast.AutoSize = true;
             this.checkBoxFast.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.checkBoxFast.Location = new System.Drawing.Point(1623, 991);
+            this.checkBoxFast.Location = new System.Drawing.Point(1440, 995);
             this.checkBoxFast.Name = "checkBoxFast";
-            this.checkBoxFast.Size = new System.Drawing.Size(84, 33);
+            this.checkBoxFast.Size = new System.Drawing.Size(72, 33);
             this.checkBoxFast.TabIndex = 13;
-            this.checkBoxFast.Text = "fast?";
+            this.checkBoxFast.Text = "fast";
             this.checkBoxFast.UseVisualStyleBackColor = true;
             // 
             // textBoxOutput
             // 
-            this.textBoxOutput.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxOutput.Location = new System.Drawing.Point(1114, 727);
+            this.textBoxOutput.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxOutput.Location = new System.Drawing.Point(1090, 740);
             this.textBoxOutput.Multiline = true;
             this.textBoxOutput.Name = "textBoxOutput";
             this.textBoxOutput.ReadOnly = true;
-            this.textBoxOutput.Size = new System.Drawing.Size(776, 216);
+            this.textBoxOutput.Size = new System.Drawing.Size(800, 200);
             this.textBoxOutput.TabIndex = 15;
             // 
-            // label5
+            // labelOutput
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label5.Location = new System.Drawing.Point(970, 898);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(138, 29);
-            this.label5.TabIndex = 14;
-            this.label5.Text = "Text output:";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+            this.labelOutput.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelOutput.AutoSize = true;
+            this.labelOutput.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelOutput.Location = new System.Drawing.Point(943, 740);
+            this.labelOutput.Name = "labelOutput";
+            this.labelOutput.Size = new System.Drawing.Size(138, 29);
+            this.labelOutput.TabIndex = 14;
+            this.labelOutput.Text = "Text output:";
             // 
             // contextMenuStrip1
             // 
@@ -278,45 +331,62 @@ namespace LSBSteganography
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // labelCharacters
+            // labelCSharpTime
             // 
-            this.labelCharacters.AutoSize = true;
-            this.labelCharacters.Location = new System.Drawing.Point(9, 817);
-            this.labelCharacters.Name = "labelCharacters";
-            this.labelCharacters.Size = new System.Drawing.Size(31, 17);
-            this.labelCharacters.TabIndex = 17;
-            this.labelCharacters.Text = "test";
-            this.labelCharacters.Visible = false;
+            this.labelCSharpTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelCSharpTime.AutoSize = true;
+            this.labelCSharpTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F);
+            this.labelCSharpTime.Location = new System.Drawing.Point(1755, 961);
+            this.labelCSharpTime.Name = "labelCSharpTime";
+            this.labelCSharpTime.Size = new System.Drawing.Size(0, 29);
+            this.labelCSharpTime.TabIndex = 18;
             // 
-            // saveToolStripMenuItem
+            // labelASMTime
             // 
-            this.saveToolStripMenuItem.Enabled = false;
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.saveToolStripMenuItem.Text = "&Save";
-            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+            this.labelASMTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelASMTime.AutoSize = true;
+            this.labelASMTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F);
+            this.labelASMTime.Location = new System.Drawing.Point(1755, 995);
+            this.labelASMTime.Name = "labelASMTime";
+            this.labelASMTime.Size = new System.Drawing.Size(0, 29);
+            this.labelASMTime.TabIndex = 19;
             // 
-            // buttonTest
+            // textBoxInput
             // 
-            this.buttonTest.Enabled = false;
-            this.buttonTest.Name = "buttonTest";
-            this.buttonTest.Size = new System.Drawing.Size(49, 24);
-            this.buttonTest.Text = "Test";
-            this.buttonTest.Click += new System.EventHandler(this.testToolStripMenuItem_Click);
+            this.textBoxInput.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.textBoxInput.Enabled = false;
+            this.textBoxInput.Location = new System.Drawing.Point(137, 740);
+            this.textBoxInput.MaxLength = 0;
+            this.textBoxInput.Multiline = true;
+            this.textBoxInput.Name = "textBoxInput";
+            this.textBoxInput.Size = new System.Drawing.Size(800, 200);
+            this.textBoxInput.TabIndex = 12;
+            // 
+            // labelTasksNumber
+            // 
+            this.labelTasksNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelTasksNumber.AutoSize = true;
+            this.labelTasksNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelTasksNumber.Location = new System.Drawing.Point(206, 980);
+            this.labelTasksNumber.Name = "labelTasksNumber";
+            this.labelTasksNumber.Size = new System.Drawing.Size(0, 29);
+            this.labelTasksNumber.TabIndex = 20;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1902, 1033);
-            this.Controls.Add(this.labelCharacters);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.labelTasksNumber);
+            this.Controls.Add(this.labelASMTime);
+            this.Controls.Add(this.labelCSharpTime);
+            this.Controls.Add(this.labelOutput);
             this.Controls.Add(this.textBoxOutput);
             this.Controls.Add(this.labelCSharp);
             this.Controls.Add(this.labelASM);
             this.Controls.Add(this.checkBoxFast);
             this.Controls.Add(this.textBoxInput);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.labelInput);
             this.Controls.Add(this.labelTasks);
             this.Controls.Add(this.trackBarTasks);
             this.Controls.Add(this.buttonRun);
@@ -324,8 +394,9 @@ namespace LSBSteganography
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.menuStrip2);
             this.MainMenuStrip = this.menuStrip1;
+            this.MinimumSize = new System.Drawing.Size(1500, 900);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "LSB steganography";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.trackBarTasks)).EndInit();
@@ -346,7 +417,7 @@ namespace LSBSteganography
 
         private System.Windows.Forms.TrackBar trackBarTasks;
         private System.Windows.Forms.Label labelTasks;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelInput;
         private System.Windows.Forms.Button buttonRun;
         private System.Windows.Forms.Label labelCSharp;
         private System.Windows.Forms.Label labelASM;
@@ -354,19 +425,26 @@ namespace LSBSteganography
         private System.Windows.Forms.PictureBox pictureBoxLeft;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.MenuStrip menuStrip2;
-        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem buttonFile;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.TextBox textBoxInput;
-        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem buttonExit;
+        private System.Windows.Forms.ToolStripMenuItem buttonOpen;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
         private System.Windows.Forms.CheckBox checkBoxFast;
         private System.Windows.Forms.TextBox textBoxOutput;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label labelOutput;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.Label labelCharacters;
-        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem buttonSave;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
+        private System.Windows.Forms.Label labelCSharpTime;
+        private System.Windows.Forms.Label labelASMTime;
+        private System.Windows.Forms.ToolStripMenuItem buttonHelp;
+        private System.Windows.Forms.ToolStripMenuItem buttonSendHelp;
+        private System.Windows.Forms.ToolStripMenuItem buttonAuthor;
+        private System.Windows.Forms.TextBox textBoxInput;
+        private System.Windows.Forms.Label labelTasksNumber;
+        private System.Windows.Forms.ToolStripMenuItem buttonTools;
+        private System.Windows.Forms.ToolStripMenuItem buttonDecode;
         private System.Windows.Forms.ToolStripMenuItem buttonTest;
     }
 }
